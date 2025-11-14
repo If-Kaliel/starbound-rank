@@ -1,44 +1,188 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-=======
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="/assets/css/estilo.css">
-    <script src="./assets/js/script.js" defer></script>
-    <title>Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Simple Manager</title>
+  <link rel="stylesheet" href="./assets/css/estilo.css">
 </head>
 
-<body>
-    <header>
-        <nav>
-            <a href="./page/integrantes.html">Equipe</a>
-            <a href="./page/about.html">Sobre</a>
-            <a href="./page/faq.html">FAQ</a>
-            <a href="./page/contato.html">Contato</a>
-        </nav>
-    </header>
+<body class="layout">
+  <header class="topbar">
+    <button class="hamburger" id="menuToggle" aria-label="Abrir menu" aria-controls="sideMenu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="brand">Simple Manager</div>
+    <div class="top-actions">
+      <a href="./page/integrantes.html" class="top-link">Equipe</a>
+      <a href="./page/about.html" class="top-link">Sobre</a>
+      <a href="./page/faq.html" class="top-link">FAQ</a>
+      <a href="./page/contato.html" class="top-link">Contato</a>
+    </div>
+  </header>
 
-    <main>
+  <aside id="sideMenu" class="drawer" aria-label="Menu principal" hidden>
+    <nav class="drawer-nav">
+      <div class="drawer-section">
+        <h2 class="drawer-heading">Navegação</h2>
+        <ul>
+          <li><a href="./page/integrantes.html">Equipe</a></li>
+          <li><a href="./page/about.html">Sobre</a></li>
+          <li><a href="./page/faq.html">FAQ</a></li>
+          <li><a href="./page/contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="drawer-section">
+        <h2 class="drawer-heading">Recursos</h2>
+        <ul>
+          <li><a href="#cursos">Cursos</a></li>
+          <li><a href="#desempenho">Desempenho</a></li>
+          <li><a href="#relatorios">Relatórios</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
 
-    </main>
+  <main class="content">
+    <section class="hero">
+      <h1>Bem vindos ao Simple Manager</h1>
+      <p class="lead">O Simple Manager é um sistema de gestão de equipes desenvolvido para otimizar o trabalho de
+        departamentos de Recursos Humanos,
+        integrando informações, produtividade e comunicação em um único ambiente.</p>
+      <img src="#" alt="#" class="hero-img">
+      <div class="section">
+        <h2 class="strong">Soluções Integradas</h2>
+        <p>Gerencie suas equipes, cadastre colaboradores, acompanhe desempenho, organize escalas e visualize relatórios
+          em tempo real.</p>
+      </div>
+    </section>
 
-    <footer>
+    <aside class="sidebar">
+      <h2 class="strong">Principais Recursos</h2>
+      <ul class="quick-features">
+        <li>Controle de presença</li>
+        <li>Produtividade</li>
+        <li>Gestão de cargos</li>
+        <li>Departamentos</li>
+        <li>Relatórios e gráficos</li>
+      </ul>
+    </aside>
 
-    </footer>
+    <section class="section highlights">
+      <h2 class="strong">Por que escolher o Simple Manager?</h2>
+      <div class="features">
+        <div class="feature card-sm">
+          <strong>Eficiência</strong>
+          <div class="muted">Automatize tarefas repetitivas e ganhe tempo no RH.</div>
+        </div>
+        <div class="feature card-sm">
+          <strong>Transparência</strong>
+          <div class="muted">Visualize indicadores de desempenho com clareza.</div>
+        </div>
+        <div class="feature card-sm">
+          <strong>Conectividade</strong>
+          <div class="muted">Equipe sempre sincronizada e bem informada.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cursos" class="courses section">
+      <header class="section-header">
+        <h2 class="strong">Painel de Cursos / Treinamentos</h2>
+        <div class="tabs">
+          <button class="tab active" type="button">Inscrito</button>
+          <button class="tab" type="button">Concluído</button>
+        </div>
+        <div class="search-box">
+          <input type="search" placeholder="Pesquisar..." aria-label="Pesquisar cursos">
+        </div>
+      </header>
+      <ul class="course-list">
+        <li class="course-card">
+          <div class="thumb"><img src="#" alt="#"></div>
+          <div class="course-body">
+            <h3 class="course-title">Onboarding de Colaboradores</h3>
+            <p class="course-meta">3 módulos • 1 treinamento</p>
+            <p class="course-desc">Fluxo completo de integração e melhores práticas de acolhimento.</p>
+          </div>
+          <div class="course-status">
+            <span class="status in-progress">Em progresso (50%)</span>
+          </div>
+        </li>
+        <li class="course-card">
+          <div class="thumb"><img src="#" alt="#"></div>
+          <div class="course-body">
+            <h3 class="course-title">Liderança e Feedback</h3>
+            <p class="course-meta">2 módulos • 1 treinamento</p>
+            <p class="course-desc">Desenvolva líderes e crie uma cultura de feedback contínuo.</p>
+          </div>
+          <div class="course-status">
+            <span class="status not-started">Não iniciada</span>
+          </div>
+        </li>
+        <li class="course-card">
+          <div class="thumb"><img src="#" alt="#"></div>
+          <div class="course-body">
+            <h3 class="course-title">Gestão de Desempenho</h3>
+            <p class="course-meta">4 módulos • 2 treinamentos</p>
+            <p class="course-desc">Métricas, avaliações e planos de desenvolvimento individual.</p>
+          </div>
+          <div class="course-status">
+            <span class="status completed">Concluída</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="desempenho" class="section kpis">
+      <h2 class="strong">Indicadores de Desempenho</h2>
+      <div class="cards-grid">
+        <article class="stat-card">
+          <h3>Produtividade Média</h3>
+          <p class="stat-value">82%</p>
+        </article>
+        <article class="stat-card">
+          <h3>Taxa de Engajamento</h3>
+          <p class="stat-value">74%</p>
+        </article>
+        <article class="stat-card">
+          <h3>Treinamentos Concluídos</h3>
+          <p class="stat-value">57</p>
+        </article>
+        <article class="stat-card">
+          <h3>Feedbacks Registrados</h3>
+          <p class="stat-value">143</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="relatorios" class="section reports">
+      <h2 class="strong">Relatórios Recentes</h2>
+      <div class="report-list">
+        <article class="report-card">
+          <h3>Resumo Mensal de Equipes</h3>
+          <p>Indicadores agregados de performance e presença.</p>
+          <button type="button" class="btn">Ver relatório</button>
+        </article>
+        <article class="report-card">
+          <h3>Mapa de Competências</h3>
+          <p>Distribuição de habilidades por departamento.</p>
+          <button type="button" class="btn">Ver relatório</button>
+        </article>
+        <article class="report-card">
+          <h3>Horas Extras</h3>
+          <p>Total acumulado e comparação com meses anteriores.</p>
+          <button type="button" class="btn">Ver relatório</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Simple Manager — Todos os direitos reservados</p>
+  </footer>
+
 </body>
 
->>>>>>> origin/Kaliel
 </html>
