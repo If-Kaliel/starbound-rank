@@ -70,3 +70,34 @@ main.content{
     border-radius: 10px;
     margin: 0 0 2rem;
 }
+
+.quick-features li {
+    padding: auto;
+    font-size: 1rem;
+    color: white;
+}
+
+.section h2.strong {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.features {
+    display: grid;
+    gap: 1rem; 
+    grid-template-columns: repeat(auto-fit,minmax(180px, 1fr));
+}
+
+.feature.card-sm {
+    background: #1a1a1a;
+    padding: 1rem;
+    border: 1px solid #27272f;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.feature.card-sm strong {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
