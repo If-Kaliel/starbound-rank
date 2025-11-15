@@ -542,6 +542,18 @@ body.drawer-open::before {
     border-radius: 6px;
 }
 
+.start-test-btn {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    border-radius: 6px;
+    cursor: pointer;
+
+}
+
 @media (max-width: 780px) {
     .top-actions {
         display: none;

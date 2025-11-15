@@ -18,7 +18,6 @@
     const addOpen = () => OPEN_CLASSES.forEach(c => body.classList.add(c));
     const removeOpen = () => OPEN_CLASSES.forEach(c => body.classList.remove(c));
 
-    // ARIA/estado inicial
     burger.setAttribute('aria-controls', drawer.id);
     burger.setAttribute('aria-expanded', String(isOpen()));
     drawer.setAttribute('aria-hidden', String(!isOpen()));
@@ -96,23 +95,19 @@
       }
     }
 
-    // Toggle pelo botão
     burger.addEventListener('click', (e) => {
       e.preventDefault();
       isOpen() ? close() : open();
     });
 
-    // Fecha ao clicar em links/botões dentro do drawer
     drawer.addEventListener('click', (e) => {
       if (e.target.closest('a, button[data-close-drawer]')) close();
     });
 
-    // Fecha ao subir de breakpoint
     window.addEventListener('resize', () => {
       if (window.innerWidth >= 1024 && isOpen()) close();
     });
 
-    // Sincroniza se carregar já aberto
     if (isOpen()) {
       burger.setAttribute('aria-expanded', 'true');
       drawer.setAttribute('aria-hidden', 'false');
