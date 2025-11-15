@@ -6,14 +6,15 @@
 
 html {
     font-size: 16px;
+    color-scheme: dark;
 }
 
 body {
-    font-family: system-ui, -apple-system, segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color: white;
     background-color: darkblue;
     background-size: cover;
-    min-height: 100vh;
+    min-height: 100dvh;
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -429,6 +430,12 @@ body.drawer-open::before {
     outline-offset: 2px;
 }
 
+
+.hamburger:focus-visible {
+    outline: 2px solid #ff1f7d; /* alterar cor */
+    outline-offset: 2px;
+    border-radius: 6px;
+}
 
 @media (max-width: 780px) {
     .top-actions {
