@@ -159,6 +159,90 @@ button.primary:disabled, .btn.primary:disabled, .btn.primary:disabled {
 
 }
 
+.section > h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.time {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin-top: 0.5rem;
+}
+
+.membro {
+    background: linear-gradient(360deg, #0367A6, #011526);
+    padding: 1.25rem;
+    border: 1px solid #27272f;
+    border-radius: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.membro:hover {
+    border-color: #fff;
+    transform: translateY(-2px);
+}
+
+.membro img {
+    width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,.08);
+  box-shadow: 0 2px 14px rgba(0,0,0,.25);
+}
+
+.membro h3 {
+    margin: 0.75rem 0 0.3rem;
+    font-size: 1.1rem;
+}
+
+.muted {
+    color: #b6c9d3;
+    font-size: 0.9rem;
+}
+
+.social {
+    margin-top: 8px;
+    display: flex;
+    gap: 3px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.social a {
+     display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .35rem .75rem;
+  border-radius: 999px;
+  border: 1px solid #27272f;
+  color: #fff;
+  text-decoration: none;
+  font-size: .85rem;
+  letter-spacing: .3px;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.social a:hover {
+    background: linear-gradient(360deg, #0367A6, #011526);
+    color: var(--pacific-blue) ;
+    border-color: var(--prussian-blue);
+}
+
+.social a:focus-visible {
+    outline: 2px solid var(--prussian-blue);
+    outline-offset: 2px;
+    border-radius: 999px;
+}
+
 #contact-form {
     max-width: 560px;
     display: grid;
@@ -781,5 +865,12 @@ body.drawer-open::before {
 @media (max-width: 600px) {
     #contact-form {
         max-width: 100%;
+    }
+}
+
+@media (max-width: 560px) {
+    .membro img {
+        width: 120px;
+        height: 120px;
     }
 }
