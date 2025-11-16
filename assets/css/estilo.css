@@ -82,6 +82,7 @@ main.content {
 
 .section {
     margin-bottom: 2rem;
+    background: (360deg, #0367A6, #011526);
 }
 
 
@@ -110,7 +111,7 @@ main.content {
 }
 
 .sidebar {
-    background: transparent;
+    background: linear-gradient(360deg, #0367A6, #011526);;
     padding: 1.3rem 1rem;
     border-radius: 10px;
     margin: 0 0 2rem;
@@ -126,6 +127,7 @@ main.content {
 .section h2.strong {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    
 }
 
 .features {
@@ -485,7 +487,7 @@ main.content {
 }
 
 .drawer-section ul li a:hover {
-    background: #27272f;
+    background: linear-gradient(360deg, #0367A6, #011526);
     /* alterar cor */
     color: #ff1f7d;
     /* alterar cor */
