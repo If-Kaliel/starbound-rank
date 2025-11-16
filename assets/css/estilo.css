@@ -1,13 +1,11 @@
 :root {
-    :root {
-        --blue-ribbon: #0468BF;
-        --rich-black: #011526;
-        --steel-blue: #0367A6;
-        --prussian-blue: #023859;
-        --pacific-blue: #049DBF;
-    }
-
+    --blue-ribbon: #0468BF;
+    --rich-black: #011526;
+    --steel-blue: #0367A6;
+    --prussian-blue: #023859;
+    --pacific-blue: #049DBF;
 }
+
 
 * {
     box-sizing: border-box;
@@ -79,6 +77,39 @@ main.content {
     padding: 1.5rem 1rem 4rem;
 }
 
+button.primary, .btn.primary, .btn.primary {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: linear-gradient(360deg, #0367A6, #011526);
+    color: #fff;
+    cursor: pointer;
+    appearance: none;
+    transition: background 0.25s ease, filter 0.15s ease;
+}
+
+button.primary:hover, .btn.primary:hover, .btn.primary:hover {
+    background: linear-gradient(360deg, #05b6d6, #0468BF);
+}
+
+button.primary:focus-visible, .btn.primary:focus-visible, .btn.primary:focus-visible {
+    outline: 2px solid #023859;
+    outline-offset: 2px;
+}
+
+button.primary:disabled, .btn.primary:disabled, .btn.primary:disabled {
+    background: linear-gradient(360deg, #0367A6, #011526);
+    color: #fff !important;
+    opacity: 1 !important;
+    cursor: not-allowed;
+    filter: none !important;
+}
 
 .section {
     margin-bottom: 2rem;
@@ -99,11 +130,7 @@ main.content {
     margin-bottom: 0.75rem;
 }
 
-.hero-img {
-    
-
-    
-}
+.hero-img {}
 
 .lead {
     font-size: 1.1rem;
@@ -129,7 +156,88 @@ main.content {
 .section h2.strong {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    
+
+}
+
+#contact-form {
+    max-width: 560px;
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.2rem;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: transparent;
+    margin: 0;
+}
+
+.form-row label {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+#contact-form input,
+#contact-form textarea {
+    background: #011526;
+    border: 1px solid #27272f;
+    color: #fff;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+    font-family: inherit;
+    border-radius: 8px;
+    resize: vertical;
+}
+
+#contact-form input::placeholder,
+#contact-form textarea::placeholder {
+    color: #8aa0b5;
+}
+
+#contact-form input:focus-visible,
+#contact-form textarea:focus-visible {
+    outline: 2px solid #023859;
+    outline-offset: 2px;
+}
+
+#contact-form input.is-invalid,
+#contact-form textarea.is-invalid {
+    border-color: #ff4d4d;
+    box-shadow: 0 0 0 2px rgba(255, 31, 125, 0.25);
+}
+
+.contact-submit {
+    justify-self: start;
+    background: linear-gradient(360deg, #0367A6, #011526);
+    font-size: 0.9rem;
+
+}
+
+#contact-status {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    min-height: 1.2rem;
+}
+
+#contact-status.success {
+    color: #00cc66;
+}
+
+#contact-status.error {
+    color: #ff4060;
+}
+
+#contact-status.pending {
+    color: #ffbb00;
+}
+
+#contact-status.info {
+    color: #049DBF;
 }
 
 .features {
@@ -361,7 +469,7 @@ main.content {
 
 .btn {
     cursor: pointer;
-   background: linear-gradient(360deg, #0367A6, #011526);
+    background: linear-gradient(360deg, #0367A6, #011526);
     color: #fff;
     border: none;
     padding: 0.6rem 1rem;
@@ -378,6 +486,27 @@ main.content {
 .btn:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+}
+
+.btn.contact-submit {
+    background: var(--pacific-blue);
+    color: #fff;
+    border: none;
+    appearance: none;
+    transition: background 0.25s ease, filter 0.25s ease;
+}
+
+.btn.contact-submit:hover {
+    background: #05b6d6;
+    filter: none;
+}
+
+.btn.contact-submit:disabled,
+.btn.contact-submit[disabled] {
+    background: var(--pacific-blue);
+    color: #fff !important;
+    opacity: 1 !important;
+    filter: none !important;
 }
 
 .topbar {
@@ -426,7 +555,8 @@ main.content {
 .hamburger span {
     height: 3px;
     width: 100%;
-    background: linear-gradient(360deg, #0367A6, #011526);;
+    background: linear-gradient(360deg, #0367A6, #011526);
+    ;
     /* alterar cor */
     display: block;
     border-radius: 3px;
@@ -645,5 +775,11 @@ body.drawer-open::before {
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
         scroll-behavior: auto !important;
+    }
+}
+
+@media (max-width: 600px) {
+    #contact-form {
+        max-width: 100%;
     }
 }

@@ -1,4 +1,4 @@
-// ...existing code...
+
 (() => {
   const ready = (fn) =>
     document.readyState === 'loading'
@@ -13,7 +13,7 @@
 
     if (!drawer.id) drawer.id = 'sideMenu';
 
-    const OPEN_CLASSES = ['drawer-open', 'draw-open']; // compat
+    const OPEN_CLASSES = ['drawer-open', 'draw-open'];
     const isOpen = () => OPEN_CLASSES.some(c => body.classList.contains(c));
     const addOpen = () => OPEN_CLASSES.forEach(c => body.classList.add(c));
     const removeOpen = () => OPEN_CLASSES.forEach(c => body.classList.remove(c));
@@ -114,4 +114,106 @@
       drawer.hidden = false;
     }
   });
+})();
+
+
+
+/* Formulário de Contato do projeto*/
+(() => {
+  const init = () => {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    const nameEl = form.querySelector('#name');
+    const emailEl = form.querySelector('#email');
+    const msgEl = form.querySelector('#message');
+    const statusEl = document.getElementById('contact-status');
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    const setStatus = (text, type = 'info') => {
+      if (!statusEl) return;
+      statusEl.textContent = text;
+      statusEl.className = type;
+    };
+
+    const clearInvalid = (el) => {
+      el.removeAttribute('aria-invalid');
+      el.classList.remove('is-invalid');
+    };
+    const markInvalid = (el) => {
+      el.setAttribute('aria-invalid', 'true');
+      el.classList.add('is-invalid');
+    };
+    const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+
+    const validate = () => {
+      let ok = true;
+      clearInvalid(nameEl); clearInvalid(emailEl); clearInvalid(msgEl);
+
+      if (!nameEl.value.trim() || nameEl.value.trim().length < 2) {
+        ok = false; markInvalid(nameEl);
+      }
+      if (!isEmail(emailEl.value.trim())) {
+        ok = false; markInvalid(emailEl);
+      }
+      if (!msgEl.value.trim() || msgEl.value.trim().length < 10) {
+        ok = false; markInvalid(msgEl);
+      }
+      if (!ok) setStatus('Verifique os campos destacados.', 'error');
+      return ok;
+    };
+
+    nameEl.addEventListener('blur', () => { if (nameEl.value.trim().length >= 2) clearInvalid(nameEl); });
+    emailEl.addEventListener('blur', () => { if (isEmail(emailEl.value.trim())) clearInvalid(emailEl); });
+    msgEl.addEventListener('blur', () => { if (msgEl.value.trim().length >= 10) clearInvalid(msgEl); });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!validate()) {
+        (form.querySelector('.is-invalid') || nameEl).focus();
+        return;
+      }
+
+      const payload = {
+        name: nameEl.value.trim(),
+        email: emailEl.value.trim(),
+        message: msgEl.value.trim(),
+        sentAt: new Date().toISOString()
+      };
+
+      submitBtn.disabled = true;
+      setStatus('Enviando...', 'pending');
+
+      try {
+        if (form.action) {
+          const res = await fetch(form.action, {
+            method: (form.method || 'POST').toUpperCase(),
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          if (!res.ok) throw new Error('Falha no envio');
+        } else {
+          const key = 'smart-rank:contact';
+          const list = JSON.parse(localStorage.getItem(key) || '[]');
+          list.push(payload);
+          localStorage.setItem(key, JSON.stringify(list));
+          await new Promise(r => setTimeout(r, 600));
+        }
+
+        setStatus('Mensagem enviada com sucesso. Obrigado pelo contato!', 'success');
+        form.reset();
+      } catch (err) {
+        console.error(err);
+        setStatus('Não foi possível enviar agora. Tente novamente mais tarde.', 'error');
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
