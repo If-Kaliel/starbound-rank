@@ -119,6 +119,8 @@ button.primary:disabled, .btn.primary:disabled, .btn.primary:disabled {
 }
 
 
+/* O que caralhos aconteceu aqui nesse hero? */
+
 .hero {
     position: relative;
     width: 100vw;
@@ -137,6 +139,7 @@ button.primary:disabled, .btn.primary:disabled, .btn.primary:disabled {
     align-items: center;
     gap: 2rem;
     min-height: 60vh;
+    margin-bottom: 4rem;
 }
 
 .hero::before {
