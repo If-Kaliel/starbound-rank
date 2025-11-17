@@ -4,6 +4,8 @@
     --steel-blue: #0367A6;
     --prussian-blue: #023859;
     --pacific-blue: #049DBF;
+    --gradient-primary: linear-gradient(360deg, var(--steel-blue), var(--rich-black) );
+    --border-subtle: #27272f
 }
 
 
@@ -77,7 +79,7 @@ main.content {
     padding: 1.5rem 1rem 4rem;
 }
 
-button.primary, .btn.primary, .btn.primary {
+button.primary, .btn.primary {
     display: block;
     width: 100%;
     padding: 0.75rem 1rem;
@@ -87,7 +89,7 @@ button.primary, .btn.primary, .btn.primary {
     font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    background: linear-gradient(360deg, #0367A6, #011526);
+    background: var(--gradient-primary);
     color: #fff;
     cursor: pointer;
     appearance: none;
@@ -95,7 +97,7 @@ button.primary, .btn.primary, .btn.primary {
 }
 
 button.primary:hover, .btn.primary:hover, .btn.primary:hover {
-    background: linear-gradient(360deg, #05b6d6, #0468BF);
+    background: var(--gradient-primary)
 }
 
 button.primary:focus-visible, .btn.primary:focus-visible, .btn.primary:focus-visible {
@@ -141,7 +143,7 @@ button.primary:disabled, .btn.primary:disabled, .btn.primary:disabled {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(1,21,38,0.8), rgba(3,103,166,0.6)); 
+    background: linear-gradient(135deg, rgba(1,21,38,0.9), rgba(3,103,166,0.8));
     z-index: 1;
 }
 
@@ -171,8 +173,29 @@ button.primary:disabled, .btn.primary:disabled, .btn.primary:disabled {
 }
 
 .hero .cta .btn {
-    padding: 0.8rem 1.5rem;
+    padding: 0.85rem 1.8rem;
     font-size: 1rem;
+    font-weight: 600;
+    width: auto;
+    min-width: 180px;
+    display: inline-block;
+}
+
+.hero .cta .btn:not(.primary) {
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.9);
+    color: #fff;
+}
+
+.hero .cta .btn:not(.primary):hover {
+    background: rgba(255,255,255,0.15);
+    border-color: #fff;
+}
+
+.hero-highlight {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
 }
 
 .hero-highlight p {
@@ -252,6 +275,10 @@ button.primary:disabled, .btn.primary:disabled, .btn.primary:disabled {
     font-size: 1.1rem;
 }
 
+.membro, .feature.card-sm, .course-card, .stat-card, .report-card, .sidebar {
+    background: var(--gradient-primary)
+}
+
 .muted {
     color: #b6c9d3;
     font-size: 0.9rem;
@@ -281,7 +308,7 @@ button.primary:disabled, .btn.primary:disabled, .btn.primary:disabled {
 }
 
 .social a:hover {
-    background: linear-gradient(360deg, #0367A6, #011526);
+    background: var(--gradient-primary);
     color: var(--pacific-blue) ;
     border-color: var(--prussian-blue);
 }
@@ -526,7 +553,7 @@ button.primary:disabled, .btn.primary:disabled, .btn.primary:disabled {
 .status {
     padding: 0.4rem 0.6rem;
     border-radius: 25px;
-    background: linear-gradient(360deg, #0367A6, #011526);
+    background: var(--gradient-primary);
     display: inline-block;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -591,7 +618,7 @@ button.primary:disabled, .btn.primary:disabled, .btn.primary:disabled {
 .report-card .btn {
     margin-top: auto;
     align-self: center;
-    background: linear-gradient(360deg, #0367A6, #011526);
+    background: var(--gradient-primary);
     color: #fff;
     border: none;
     padding: 0.6rem 1rem;
@@ -602,7 +629,7 @@ button.primary:disabled, .btn.primary:disabled, .btn.primary:disabled {
 
 .btn {
     cursor: pointer;
-    background: linear-gradient(360deg, #0367A6, #011526);
+    background: var(--gradient-primary);
     color: #fff;
     border: none;
     padding: 0.6rem 1rem;
@@ -688,7 +715,7 @@ button.primary:disabled, .btn.primary:disabled, .btn.primary:disabled {
 .hamburger span {
     height: 3px;
     width: 100%;
-    background: linear-gradient(360deg, #0367A6, #011526);
+    background: currentColor;
     ;
     /* alterar cor */
     display: block;
@@ -752,7 +779,7 @@ button.primary:disabled, .btn.primary:disabled, .btn.primary:disabled {
 }
 
 .drawer-section ul li a:hover {
-    background: linear-gradient(360deg, #0367A6, #011526);
+    background: var(--gradient-primary);
     /* alterar cor */
     color: #049DBF;
     /* alterar cor */
@@ -802,7 +829,7 @@ body.drawer-open::before {
 }
 
 .drawer::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(360deg, #0367A6, #011526);
+    background: var(--gradient-primary);
     /* alterar cor */
 }
 
