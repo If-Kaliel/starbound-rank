@@ -247,6 +247,8 @@ button.primary:disabled, .btn.primary:disabled, .btn.primary:disabled {
     margin-bottom: 1rem;
 }
 
+/*PAGINA DE EQUIPE*/
+
 .time {
     display: grid;
     gap: 1rem;
@@ -330,6 +332,8 @@ button.primary:disabled, .btn.primary:disabled, .btn.primary:disabled {
     border-radius: 999px;
 }
 
+/* FORMULÁRIO DE CONTATO */
+
 #contact-form {
     max-width: 560px;
     display: grid;
@@ -411,6 +415,8 @@ button.primary:disabled, .btn.primary:disabled, .btn.primary:disabled {
     color: #049DBF;
 }
 
+
+
 .features {
     display: grid;
     gap: 1rem;
@@ -429,6 +435,8 @@ button.primary:disabled, .btn.primary:disabled, .btn.primary:disabled {
     display: block;
     margin-bottom: 0.25rem;
 }
+
+/* PAGINA DE CURSOS */
 
 .course-list {
     display: grid;
@@ -813,6 +821,7 @@ body.drawer-open::before {
     z-index: 80;
 }
 
+
 .site-footer {
     margin-top: auto;
     padding: 1.2rem 1rem;
@@ -867,6 +876,8 @@ body.drawer-open::before {
     border-radius: 6px;
 }
 
+
+
 .start-test-btn {
     background: transparent;
     border: none;
@@ -890,9 +901,112 @@ body.drawer-open::before {
     border: 1px solid #27272f;
 }
 
+/*Footer*/
+
 .site-footer {
     background: #011526;
     border-top: 1px solid #27272f;
+}
+
+/* PAGINA DE PRÊMIOS E CONQUISTAS */
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    margin: 2rem auto;
+    max-width: 1100px;
+    padding: 0;
+}
+
+.achievement-card {
+    background: linear-gradient(135deg, #0367A6 60%, #011526 100%);
+    border: 2px solid #049DBF;
+    border-radius: 18px;
+    box-shadow: 0 6px 24px rgba(4,104,191,0.13);
+    padding: 2rem 1.2rem 1.2rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    min-height: 320px;
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+
+.achievement-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 12px 32px rgba(4,104,191,0.22);
+    border-color: #ffdd57;
+}
+
+.achievement-img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.2rem;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 12px rgba(4,104,191,0.10);
+    overflow: hidden;
+}
+
+.achievement-img img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+}
+
+.achievement-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffdd57;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.achievement-desc {
+    font-size: 0.98rem;
+    color: #e6f6ff;
+    margin-bottom: 0.7rem;
+}
+
+.achievement-reward {
+    font-size: 0.95rem;
+    color: #0bb822;
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+}
+
+.achievement-status {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background: #fff;
+    color: #0367A6;
+    box-shadow: 0 2px 8px rgba(4,104,191,0.09);
+    border: 1px solid #049DBF;
+}
+
+
+main.content > .achievements-grid {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main.content > section {
+    margin-bottom: 0;
+    background: transparent;
 }
 
 @media (max-width: 780px) {
@@ -918,6 +1032,16 @@ body.drawer-open::before {
         flex-direction: row;
         align-items: flex-start;
         gap: 0.6rem;
+    }
+    
+    .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 0.5rem;
+    }
+    .achievement-card {
+        min-height: 260px;
+        padding: 1.2rem 0.7rem 1rem 0.7rem;
     }
 
     .course-status .status,
@@ -979,3 +1103,4 @@ body.drawer-open::before {
         align-items: center;
     }
 }
+
