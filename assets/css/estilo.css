@@ -132,8 +132,8 @@ button.primary:disabled,
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    padding: 4rem 2rem;
-    background: linear-gradient(135deg, #011526, #0367A6);
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #011526 0%, #023859 50%, #0367A6 100%);
     color: #fff;
     text-align: center;
     overflow: hidden;
@@ -141,8 +141,8 @@ button.primary:disabled,
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
-    min-height: 60vh;
+    gap: 3rem;
+    min-height: 70vh;
     margin-bottom: 4rem;
 }
 
@@ -150,7 +150,7 @@ button.primary:disabled,
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(1, 21, 38, 0.9), rgba(3, 103, 166, 0.8));
+    background: radial-gradient(circle at 30% 40%, rgba(4, 157, 191, 0.15), transparent 60%), radial-gradient(circle at 70% 60%, rgba(4, 104, 191, 0.12), transparent 50%);
     backdrop-filter: blur(1px);
     z-index: 1;
 }
@@ -159,66 +159,97 @@ button.primary:disabled,
 .hero-highlight {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    max-width: 900px;
 }
 
 .hero h1 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    margin-bottom: 1rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: clamp(2.8rem, 6vw, 4rem);
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
 }
 
 .hero .lead {
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
-    margin-bottom: 2rem;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-    max-width: 700px;
+    font-size: clamp(1.1rem, 2.8vw, 1.4rem);
+    margin-bottom: 2.5rem;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    max-width: 750px;
     margin-inline: auto;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.95);
 }
 
 .hero .cta {
     display: flex;
-    gap: 1rem;
+    gap: 1.2rem;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 1rem;
 }
 
 .hero .cta .btn {
-    padding: 0.85rem 1.8rem;
-    font-size: 1rem;
-    font-weight: 600;
+    padding: 1rem 2.2rem;
+    font-size: 1.05rem;
+    font-weight: 700;
     width: auto;
-    min-width: 180px;
+    min-width: 200px;
     display: inline-block;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    border-radius: 12px;
+}
+
+.hero .cta .btn.primary {
+    background: linear-gradient(135deg, var(--pacific-blue), var(--steel-blue));
+    transform: scale(1);
+}
+
+.hero .cta .btn.primary:hover {
+    background: linear-gradient(135deg, #05b6d6, #0468BF);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(4, 157, 191, 0.4);
 }
 
 .hero .cta .btn:not(.primary) {
-    background: var(--gradient-primary);
-    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     color: #fff;
 }
 
 .hero .cta .btn:not(.primary):hover {
-    background: var(--gradient-primary);
-    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(255, 255, 255, 0.15);
 }
 
 .hero-highlight {
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 2rem;
+    padding: 2rem 1.5rem;
+    border-top: 2px solid rgba(4, 157, 191, 0.4);
+    background: rgba(1, 21, 38, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .hero-highlight p {
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .hero-highlight h2 {
-    font-size: clamp(1.6rem, 3vw, 2rem);
-    margin-bottom: 0.6rem;
+    font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+    margin-bottom: 0.8rem;
+    color: var(--pacific-blue);
+    font-weight: 700;
+    letter-spacing: -0.3px;
 }
-
 
 .lead {
     font-size: 1.1rem;
@@ -1239,7 +1270,8 @@ main.content~section:focus-within,
     }
 
     .hero {
-        padding: 1.5rem 1rem 2rem;
+        padding: 3rem 1.5rem;
+        min-height: 55vh;
     }
 
     .course-card {
@@ -1320,17 +1352,32 @@ main.content~section:focus-within,
 
 @media (max-width: 900px) {
     .hero {
-        padding: 3rem 1.5rem;
-        min-height: 50vh;
-        gap: 1.5rem;
+        padding: 4rem 1.5rem;
+        min-height: 60vh;
+        gap: 2rem;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.2rem, 5vw, 3rem);
     }
 
     .hero .cta {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        width: 100%;
+        max-width: 400px;
     }
 
-    .faq-section {
+        .hero .cta .btn {
+        width: 100%;
+    }
+
+    .hero-highlight {
+        padding: 1.5rem 1rem;
+    }
+
+
+  .faq-section {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
