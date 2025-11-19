@@ -1391,3 +1391,67 @@ main.content~section:focus-within,
         margin: 0 auto;
     }
 }
+@media (min-width: 768px) and (max-width: 991px) {
+    .hero {
+        padding: 4.5rem 2rem;
+        min-height: 65vh;
+    }
+    
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .hero h1 {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+    }
+    
+    .hero .lead {
+        font-size: clamp(0.95rem, 4vw, 1.1rem);
+    }
+    
+    .hamburger {
+        width: 38px;
+        height: 30px;
+    }
+}
+
+@media (min-width: 1300px) {
+    main.content {
+        max-width: 1400px;
+        padding: 2rem 2rem 4rem;
+    }
+    
+    .hero {
+        min-height: 75vh;
+        padding: 6rem 2rem;
+    }
+    
+    .features,
+    .cards-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .btn,
+    .hamburger,
+    .drawer-section ul li a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+body, html {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
