@@ -193,7 +193,7 @@
           });
           if (!res.ok) throw new Error('Falha no envio');
         } else {
-          const key = 'starborn-rank:contact';
+          const key = 'starbound-rank:contact';
           const list = JSON.parse(localStorage.getItem(key) || '[]');
           list.push(payload);
           localStorage.setItem(key, JSON.stringify(list));

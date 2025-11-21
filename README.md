@@ -1,12 +1,12 @@
-# Starborn Rank
+# Starbound Rank
 
 <img width="300" height="300" alt="Pascal o mascote" src="/assets/img/freepik.jpg" />
 
 ## 📖 Descrição do Projeto
 
-O **Starborn Rank** é um sistema de treinamento inovador desenvolvido para revolucionar a integração e desenvolvimento de colaboradores nas empresas. 
+O **Starbound Rank** é um sistema de treinamento inovador desenvolvido para revolucionar a integração e desenvolvimento de colaboradores nas empresas. 
 
-Em uma realidade ultracompetitiva onde currículos falam mais do que atitudes, o Starborn Rank entra como aliado tanto do empregador quanto do colaborador. Não há necessidade de demitir funcionários ou sempre buscar o currículo mais completo quando se pode lapidar um diamante bruto ao seu modo.
+Em uma realidade ultracompetitiva onde currículos falam mais do que atitudes, o Starbound Rank entra como aliado tanto do empregador quanto do colaborador. Não há necessidade de demitir funcionários ou sempre buscar o currículo mais completo quando se pode lapidar um diamante bruto ao seu modo.
 
 ### 🎯 Problema que resolve
 - Processos de admissão burocráticos e demorados
@@ -60,7 +60,7 @@ Nossa missão é unir a satisfação do funcionário e do empregador, afinal **t
 ## 📂 Estrutura de Pastas
 
 ```
-starborn-rank/
+starbound-rank/
 │
 ├── assets/
 │   ├── css/
@@ -121,8 +121,8 @@ starborn-rank/
 
 ## 🔗 Links do Projeto
 
-- 🌐 **Site hospedado**: [https://starborn-rank.vercel.app](https://starborn-rank.vercel.app)
-- 📦 **Repositório GitHub**: [https://github.com/If-Kaliel/starborn-rank](https://github.com/If-Kaliel/starborn-rank)
+- 🌐 **Site hospedado**: [https://starbound-rank.vercel.app](https://starbound-rank.vercel.app)
+- 📦 **Repositório GitHub**: [https://github.com/If-Kaliel/starbound-rank](https://github.com/If-Kaliel/starbound-rank)
 
 ---
 
@@ -130,12 +130,12 @@ starborn-rank/
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/If-Kaliel/starborn-rank.git
+git clone https://github.com/If-Kaliel/starbound-rank.git
 ```
 
 2. Navegue até a pasta do projeto:
 ```bash
-cd starborn-rank
+cd starbound-rank
 ```
 
 3. Abra o arquivo `index.html` no navegador ou use um servidor local:
@@ -164,7 +164,7 @@ O projeto é totalmente responsivo e otimizado para:
 
 Este projeto foi desenvolvido com intuito de ser a nossa proposta na Global Solution
 
-© 2025 Starborn Rank - Todos os direitos reservados
+© 2025 Starbound Rank - Todos os direitos reservados
 
 ---
 
