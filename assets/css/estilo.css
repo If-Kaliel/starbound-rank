@@ -275,14 +275,41 @@ button.primary:disabled,
 }
 
 .section h2.strong {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 1.5rem;
     text-align: center;
+    color: var(--pacific-blue);
+    font-weight: 700;
 }
 
 .section>h2 {
     text-align: center;
     margin-bottom: 1rem;
+}
+
+/* Estilos para página sobre */
+.about-section {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    padding: 2rem;
+    background: rgba(1, 21, 38, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.about-content p {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.95);
+    text-align: justify;
+    hyphens: auto;
 }
 
 .section-header {
@@ -1532,6 +1559,17 @@ main.content~section:focus-within,
         width: 100%;
         max-width: 400px;
     }
+
+    /* Ajustes para página sobre em mobile */
+    .about-section {
+        padding: 1.5rem 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+        text-align: left;
+    }
 }
 
 
@@ -1547,6 +1585,15 @@ main.content~section:focus-within,
 
     .cards-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Ajustes para página sobre em tablet */
+    .about-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .about-content p {
+        font-size: 1.1rem;
     }
 }
 
@@ -1566,6 +1613,21 @@ main.content~section:focus-within,
     .hamburger {
         width: 38px;
         height: 30px;
+    }
+
+    /* Ajustes extras para página sobre em telas muito pequenas */
+    .about-section {
+        padding: 1rem 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .about-content {
+        gap: 1rem;
+    }
+
+    .about-content p {
+        font-size: 0.95rem;
+        line-height: 1.7;
     }
 }
 
